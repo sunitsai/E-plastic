@@ -1,0 +1,39 @@
+{% load static %}
+<link rel="stylesheet" href="{% static '/css/login.css' %}">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+<div class="simple-login-container">
+    <h2>Login Form</h2>
+    <center>
+    <div class="row">
+        
+        <select name="role" id="">
+            <option>---Select Role---</option>
+            <option>employee</option>
+            <option>hirer</option>
+        </select>
+   
+    </div>
+</center>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="email" class="form-control" placeholder="Email" name="email">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="password" placeholder="Enter your Password" class="form-control" name="password">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="submit" class="btn btn-block btn-login" placeholder="Enter your Password" >
+        </div>
+    </div>
+ 
+</div>
+</form>

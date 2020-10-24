@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1{
+            color:orange
+        }
+        span{
+            color:red;
+        }
+    </style>
+    <script>
+        function check_fname(){
+            var f = document.frm.fname.value;
+            var reg = /^[A-Za-z]+$/;
+            if(f.trim()==""){
+                document.getElementById("error").innerHTML="Please enter your fname";
+            }
+            else if(!reg.test(f)){
+                document.getElementById("error").innerHTML="Please enter only Alphabet";
+            }
+            else{
+                document.getElementById("error").innerHTML="";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="" method="post" name="frm">
+        <table>
+            <tr>
+                <td>
+                    Firstname
+                </td>
+                <td>
+                    <input type="text" name="fname" id="" onblur="check_fname();">
+                0/td>
+                <td>
+
+                    <span id="error"></span>
+                </td>
+            </tr>
+
+            <tr>
+                Firstname : {{request.session.firstname}}
+
+
+                <br>
+                
+                <br>
+                
+                Email : {{request.session.email}}
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
